@@ -12,13 +12,21 @@
   <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-  <div class="page">
+  <a class="skip-link" href="#main-content"> Skip to Main Content</a>
+  <div id="reader-announcer" class="reader-only" aria-live="polite" aria-atomic="true"></div>
+  
+  <main class="page" id="main-content"> 
     <div id="update-banner" class="update-banner" hidden></div>
     <header class="topbar">
       <div class="topbar-search-wrap">
         <div class="topbar-search">
           <span class="topbar-search-icon" id="search-icon-slot"></span>
           <input id="search-input" type="text"
+                 role="combobox"
+                 aria-autocomplete="list"
+                 aria-expanded="false"
+                 aria-controls="search-results"
+                 aria-activedescendant=""
                  placeholder="Search announcements, modules, assignments…"
                  autocomplete="off" spellcheck="false" />
           <kbd class="search-shortcut">/</kbd>
@@ -75,7 +83,7 @@
         <aside class="schedule-agenda" id="schedule-agenda"></aside>
       </div>
     </section>
-  </div>
+  </main>
 
   <!-- Course quick-peek popover (positioned dynamically). -->
   <div id="course-peek" class="course-peek" role="dialog" aria-label="Course quick peek" hidden></div>
